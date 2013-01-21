@@ -1,5 +1,26 @@
 <?php
 
+/* example routes (the Rails way)
+
+zombies           GET    /zombies(.:format)                zombies#index
+                  POST   /zombies(.:format)                zombies#create
+new_zombie        GET    /zombies/new(.:format)            zombies#new
+edit_zombie       GET    /zombies/:id/edit(.:format)       zombies#edit
+zombie            GET    /zombies/:id(.:format)            zombies#show
+                  PUT    /zombies/:id(.:format)            zombies#update
+                  DELETE /zombies/:id(.:format)            zombies#destroy
+root                     /
+
+*/
+
+Route::get('companies',             'companies@index');
+Route::post('companies',            'companies@create');
+Route::get('companies/new',         'companies@new');
+Route::get('companies/(:num)/edit', 'companies@edit');
+Route::get('companies/(:num)',      'companies@show');
+Route::put('companies/(:num)',      'companies@update');
+Route::delete('companies/(:num)',   'companies@destroy');
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -34,7 +55,8 @@
 
 Route::get('/', function()
 {
-	return View::make('home.index');
+	//return View::make('home.index');
+  return View::make('layouts.application');
 });
 
 /*

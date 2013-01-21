@@ -1,4 +1,10 @@
-# [Laravel](http://laravel.com) - A PHP Framework For Web Artisans
+# Laravel-REST
+
+A demo implementation of the Ruby on Rails RESTful architecture, built in Laravel.
+
+This demo is complete of documentation and a PHPUnit test suite.
+
+#[Laravel](http://laravel.com) - A PHP Framework For Web Artisans
 
 Laravel is a clean and classy framework for PHP web development. Freeing you
 from spaghetti code, Laravel helps you create wonderful applications using
