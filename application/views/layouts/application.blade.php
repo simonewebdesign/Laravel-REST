@@ -7,7 +7,10 @@
 <body>
   <h1>laravel-pierucci</h1>
   
-  <p id="notice">{{-- TODO print $notice if !empty --}}</p>  
+  @if ( Session::get('notice') )
+  <p id="notice">{{ Session::get('notice') }}</p>
+  @endif
+
   @yield('content')
 </body>
 </html>

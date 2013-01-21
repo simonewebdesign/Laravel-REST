@@ -1,5 +1,6 @@
 @layout('layouts.application')
 @section('content')
-  @render('company._form')
-<%= link_to 'Back', companies_path %>  
+<h1>asd</h1>
+  @include('company._form')
+  {{ HTML::link_to_action('companies@index', 'Back') }}
 @endsection
