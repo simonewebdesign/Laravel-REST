@@ -63,7 +63,7 @@ return array(
 		'mysql' => array(
 			'driver'   => 'mysql',
 			'host'     => 'localhost',
-			'database' => 'laravelpierucci',
+			'database' => 'laravelrest',
 			'username' => 'root',
 			'password' => '',
 			'charset'  => 'utf8',
