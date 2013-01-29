@@ -21,7 +21,7 @@
     <td>{{ $company->website }}</td>
     <td>{{ HTML::link_to_action('companies@show', 'Show', array($company->id)) }}</td>
     <td>{{ HTML::link_to_action('companies@edit', 'Edit', array($company->id)) }}</td>
-    <td>{{ HTML::link_to_action('companies@destroy', 'Destroy', array($company->id)) }}
+    <td>{{ HTML::link_to_action('companies@destroy', 'Destroy', array($company->id)) }}</td>
     {{-- TODO implement the confirm: 'Are you sure?' --}}</td>
   </tr>
   @endforeach
@@ -30,7 +30,5 @@
 
 <br>
 {{ HTML::link_to_action('companies@new', "New Company") }}
-
-{{ var_dump(null) }}
 
 @endsection

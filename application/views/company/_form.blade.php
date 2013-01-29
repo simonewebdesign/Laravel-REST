@@ -1,7 +1,3 @@
-
-
-<h2>{{ $title }} company</h2>
-
 {{-- TODO add error handling --}}
 
 {{ Form::open($action, $method) }}

@@ -1,26 +1,5 @@
 <?php
 
-/* example routes (the Rails way)
-
-zombies           GET    /zombies(.:format)                zombies#index
-                  POST   /zombies(.:format)                zombies#create
-new_zombie        GET    /zombies/new(.:format)            zombies#new
-edit_zombie       GET    /zombies/:id/edit(.:format)       zombies#edit
-zombie            GET    /zombies/:id(.:format)            zombies#show
-                  PUT    /zombies/:id(.:format)            zombies#update
-                  DELETE /zombies/:id(.:format)            zombies#destroy
-root                     /
-
-*/
-
-Route::get('companies',             'companies@index');
-Route::post('companies',            'companies@create');
-Route::get('companies/new',         'companies@new');
-Route::get('companies/(:num)/edit', 'companies@edit');
-Route::get('companies/(:num)',      'companies@show');
-Route::put('companies/(:num)',      'companies@update');
-Route::delete('companies/(:num)',   'companies@destroy');
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -51,13 +30,29 @@ Route::delete('companies/(:num)',   'companies@destroy');
 |			return "Welcome, $name.";
 |		});
 |
+| Route::controller(Controller::detect()); Nope. This is not ideal for REST.
+|
+| Example routes (the Rails way)
+|
+| zombies          GET    /zombies(.:format)                zombies#index
+|                  POST   /zombies(.:format)                zombies#create
+| new_zombie       GET    /zombies/new(.:format)            zombies#new
+| edit_zombie      GET    /zombies/:id/edit(.:format)       zombies#edit
+| zombie           GET    /zombies/:id(.:format)            zombies#show
+|                  PUT    /zombies/:id(.:format)            zombies#update
+|                  DELETE /zombies/:id(.:format)            zombies#destroy
 */
 
-Route::get('/', function()
-{
-	//return View::make('home.index');
-  return View::make('layouts.application');
-});
+Route::get('companies',             'companies@index');
+Route::post('companies',            'companies@create');
+Route::get('companies/new',         'companies@new');
+Route::get('companies/(:num)/edit', 'companies@edit');
+Route::delete('companies/(:num)',   'companies@destroy');
+Route::get('companies/(:num)',      'companies@show');
+Route::put('companies/(:num)',      'companies@update');
+Route::get('/', 'companies@index');
+
+// {{ Form::open(null, 'DELETE') }} or better do a soft delete (using GET for being reached by link)
 
 /*
 |--------------------------------------------------------------------------
