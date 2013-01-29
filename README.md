@@ -4,6 +4,48 @@ A demo implementation of the Ruby on Rails RESTful architecture, built in Larave
 
 This demo is complete of documentation and a PHPUnit test suite.
 
+# Installation
+
+0. Check the Laravel [requirements](http://laravel.com/docs/install#requirements).
+
+1. Clone the repo:
+
+`$ git clone https://github.com/simonewebdesign/Laravel-REST.git`
+
+2. Create the `laravelrest` database:
+
+```$ mysql -u root
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 5.1.66 Source distribution
+
+Copyright (c) 2000, 2012, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> create database laravelrest;
+Query OK, 1 row affected (0.00 sec)
+```
+
+3. Create the laravel migration table (if you haven't already done):
+
+```
+$ php artisan migrate:install
+Migration table created successfully.
+```
+
+4. Run the migrations:
+
+```
+$ php artisan migrate
+Migrated: application/2013_01_19_162009_create_companies_table
+...
+```
+
 #[Laravel](http://laravel.com) - A PHP Framework For Web Artisans
 
 Laravel is a clean and classy framework for PHP web development. Freeing you
