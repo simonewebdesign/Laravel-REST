@@ -6,45 +6,30 @@ This demo is complete of documentation and a PHPUnit test suite.
 
 # Installation
 
-0. Check the Laravel [requirements](http://laravel.com/docs/install#requirements).
+1.  Check the Laravel [requirements](http://laravel.com/docs/install#requirements).
 
-1. Clone the repo:
+2.  Clone the repo:
 
-`$ git clone https://github.com/simonewebdesign/Laravel-REST.git`
+        $ git clone https://github.com/simonewebdesign/Laravel-REST.git
 
-2. Create the `laravelrest` database:
+3.  Create the `laravelrest` database:
 
-```$ mysql -u root
-Welcome to the MySQL monitor.  Commands end with ; or \g.
-Your MySQL connection id is 8
-Server version: 5.1.66 Source distribution
+        $ mysql -u root
+        Welcome to the MySQL monitor.  Commands end with ; or \g.
+    
+        mysql> create database laravelrest;
+        Query OK, 1 row affected (0.00 sec)
 
-Copyright (c) 2000, 2012, Oracle and/or its affiliates. All rights reserved.
+4.  Create the laravel migration table (if you haven't already done):
 
-Oracle is a registered trademark of Oracle Corporation and/or its
-affiliates. Other names may be trademarks of their respective
-owners.
+        $ php artisan migrate:install
+        Migration table created successfully.
 
-Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+5.  Run the migrations:
 
-mysql> create database laravelrest;
-Query OK, 1 row affected (0.00 sec)
-```
-
-3. Create the laravel migration table (if you haven't already done):
-
-```
-$ php artisan migrate:install
-Migration table created successfully.
-```
-
-4. Run the migrations:
-
-```
-$ php artisan migrate
-Migrated: application/2013_01_19_162009_create_companies_table
-...
-```
+        $ php artisan migrate
+        Migrated: application/2013_01_19_162009_create_companies_table
+        ...
 
 #[Laravel](http://laravel.com) - A PHP Framework For Web Artisans
 
