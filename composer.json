@@ -1,0 +1,7 @@
+{
+  "require": {
+    "phpunit/phpunit": "3.*",
+    "phpunit/dbunit": ">=1.2",
+    "phpunit/php-invoker": "*"        
+  }
+}
