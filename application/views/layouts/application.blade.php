@@ -12,5 +12,7 @@
   @endif
 
   @yield('content')
+
+  {{ HTML::script(URL::to_asset('js/script.js')) }}
 </body>
 </html>

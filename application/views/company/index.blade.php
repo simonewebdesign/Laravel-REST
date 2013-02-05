@@ -21,8 +21,7 @@
     <td>{{ $company->website }}</td>
     <td>{{ HTML::link_to_action('companies@show', 'Show', array($company->id)) }}</td>
     <td>{{ HTML::link_to_action('companies@edit', 'Edit', array($company->id)) }}</td>
-    <td>{{ HTML::link_to_action('companies@destroy', 'Destroy', array($company->id)) }}</td>
-    {{-- TODO implement the confirm: 'Are you sure?' --}}</td>
+    <td>{{ HTML::link_to_action('companies@destroy', 'Destroy', array($company->id), array('class' => 'confirmDelete')) }}</td>
   </tr>
   @endforeach
 
