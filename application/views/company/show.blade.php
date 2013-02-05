@@ -7,6 +7,11 @@
 </p>
 
 <p>
+  <b>Description:</b>
+  {{ $company->description }}
+</p>
+
+<p>
   <b>Telephone:</b>
   {{ $company->telephone }}
 </p>

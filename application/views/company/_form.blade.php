@@ -7,6 +7,10 @@
     {{ Form::text('name', $company->name) }}
   </div>
   <div>
+    {{ Form::label('description', 'Description') }}<br>
+    {{ Form::textarea('description', $company->description) }}
+  </div>  
+  <div>
     {{ Form::label('telephone', 'Telephone') }}<br>
     {{ Form::telephone('telephone', $company->telephone) }}
   </div>
