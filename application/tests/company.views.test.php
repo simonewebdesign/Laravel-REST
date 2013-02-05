@@ -1,6 +1,6 @@
 <?php
 
-class CompanyTest extends PHPUnit_Framework_TestCase {
+class ViewsTest extends PHPUnit_Framework_TestCase {
 
   /**
    * Test that a given condition is met.
@@ -27,7 +27,8 @@ class CompanyTest extends PHPUnit_Framework_TestCase {
     - Website
     - deleted
 */
-  public function testNamePresence() {
+  public function testIndex() {
+    
   }
 
 }
