@@ -5,7 +5,9 @@ A demo implementation of the Ruby on Rails RESTful architecture, built in Larave
 
 # Installation
 
-1.  Check the Laravel [requirements](http://laravel.com/docs/install#requirements).
+4 easy steps:
+
+1.  Check the Laravel [requirements](http://laravel.com/docs/install#requirements);
 
 2.  Clone the repo:
 
@@ -19,15 +21,13 @@ A demo implementation of the Ruby on Rails RESTful architecture, built in Larave
         mysql> create database laravelrest;
         Query OK, 1 row affected (0.00 sec)
 
-4.  Create the laravel migration table (if you haven't already done):
+4.  Run the migrations:
 
         $ php artisan migrate:install
         Migration table created successfully.
-
-5.  Run the migrations:
-
         $ php artisan migrate
         Migrated: application/2013_01_19_162009_create_companies_table
+        Migrated: application/2013_02_05_154929_add_description_to_company.php
         ...
 
 #[Laravel](http://laravel.com) - A PHP Framework For Web Artisans
