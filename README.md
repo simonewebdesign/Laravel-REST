@@ -1,8 +1,7 @@
 # Laravel-REST
 
-A demo implementation of the Ruby on Rails RESTful architecture, built in Laravel.
+A demo implementation of the Ruby on Rails RESTful architecture, built in Laravel. This demo app is complete of documentation ~~and a PHPUnit test suite~~ (not yet).
 
-This demo is complete of documentation and a PHPUnit test suite.
 
 # Installation
 
