@@ -11,7 +11,7 @@ A demo implementation of the Ruby on Rails RESTful architecture, built in Larave
 
 2.  Clone the repo:
 
-        $ git clone https://github.com/simonewebdesign/Laravel-REST.git
+        $ git clone git://github.com/simonewebdesign/Laravel-REST.git
 
 3.  Create the `laravelrest` database:
 
