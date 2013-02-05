@@ -12,7 +12,7 @@
     <th colspan="3">Actions</th>
   </tr>
 
-  @foreach ($companies as $company)
+  @forelse ($companies as $company)
   <tr>
     <td>{{ $company->name }}</td>
     <td>{{ $company->telephone }}</td>
@@ -23,7 +23,9 @@
     <td>{{ HTML::link_to_action('companies@edit', 'Edit', array($company->id)) }}</td>
     <td>{{ HTML::link_to_action('companies@destroy', 'Destroy', array($company->id), array('class' => 'confirmDelete')) }}</td>
   </tr>
-  @endforeach
+  @empty
+  <p>There are no companies yet.</p>
+  @endforelse
 
 </table>
 
