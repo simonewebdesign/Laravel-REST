@@ -17,6 +17,9 @@ class Companies_Controller extends Base_Controller {
 
     $view = View::make('company.show');
     $view['company'] = Company::find($id);
+    if ($view['company'] == null) {
+      return Response::error('404');
+    }
     return $view;
   }
 
@@ -33,11 +36,14 @@ class Companies_Controller extends Base_Controller {
   public function action_edit($id) {
 
     $view = View::make('company.edit');
-    $view['id'] = $id;
     $view['company'] = Company::find($id);
+    if ($view['company'] == null) {
+      return Response::error('404');
+    }
     $view['action'] = 'companies/' . $id;
     $view['method'] = 'PUT';
     $view['submit'] = 'Update Company';
+    $view['id'] = $id;
     return $view;
   }
 
