@@ -39,11 +39,6 @@ class Companies_Controller extends Base_Controller {
   }
 
   public function action_create() {
-    // RAILS logic
-    // if save was successful
-      // redirect to the company with notice successfully created
-    // else
-      // render action new with errors (and old input)
     $attributes = Input::all();
     $validation = Validator::make($attributes, Company::$rules);
     if ($validation->fails()) {
@@ -59,26 +54,10 @@ class Companies_Controller extends Base_Controller {
         ->with('notice', 'Company was successfully created.');
       }
     }
-
     // no view to render
   }
 
   public function action_update() {
-    /* attualmente fa questo:
-    se trovo la company e riesco a updatarla
-      redirect to show
-    altrimenti
-      redirect to edit
-
-    - invece deve fare -
-
-    validation
-    se fallisce
-      redirect to edit with data
-    altrimenti
-      se trovo la company e riesco a updatarla
-        redirect to show
-    */
     $id = URI::segment(2); // 1st segment is "company", 2nd is the id
     $company = Company::find($id);
 
