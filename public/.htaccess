@@ -9,7 +9,7 @@
 # features. "+FollowSymLinks" must be enabled for this to work symbolically.
 
 <IfModule mod_rewrite.c>
-	Options +FollowSymLinks
+#	Options +FollowSymLinks
 	RewriteEngine On
 </IfModule>
 
