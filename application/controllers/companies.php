@@ -6,20 +6,22 @@ class Companies_Controller extends Base_Controller {
   I don't want to have 'index' or 'show' in the URL. */
 
   public function action_index() {
+
     $view = View::make('company.index');
   //$view['companies'] = DB::table('companies')->get();
     $view['companies'] = Company::all();
     return $view;
   }
 
-  public function action_show() {
+  public function action_show($id) {
+
     $view = View::make('company.show');
-    $id = URI::segment(2); // 1st segment is "company", 2nd is the id
     $view['company'] = Company::find($id);
     return $view;
   }
 
   public function action_new() {
+
     $view = View::make('company.new');
     $view['company'] = new Company;
     $view['action'] = 'companies';
@@ -28,17 +30,19 @@ class Companies_Controller extends Base_Controller {
     return $view;
   }
 
-  public function action_edit() {
+  public function action_edit($id) {
+
     $view = View::make('company.edit');
-    $view['id'] = URI::segment(2); // 1st segment is "company", 2nd is the id
-    $view['company'] = Company::find($view['id']);
-    $view['action'] = 'companies/' . $view['id'];
+    $view['id'] = $id;
+    $view['company'] = Company::find($id);
+    $view['action'] = 'companies/' . $id;
     $view['method'] = 'PUT';
     $view['submit'] = 'Update Company';
     return $view;
   }
 
   public function action_create() {
+
     $attributes = Input::all();
     $validation = Validator::make($attributes, Company::$rules);
     if ($validation->fails()) {
@@ -57,8 +61,8 @@ class Companies_Controller extends Base_Controller {
     // no view to render
   }
 
-  public function action_update() {
-    $id = URI::segment(2); // 1st segment is "company", 2nd is the id
+  public function action_update($id) {
+
     $company = Company::find($id);
 
     if ($company) {
@@ -88,8 +92,8 @@ class Companies_Controller extends Base_Controller {
     // no view to render
   }
 
-  public function action_destroy() {
-    $id = URI::segment(2);
+  public function action_destroy($id) {
+
     $company = Company::find($id)->delete();
     return Redirect::to_action('companies@index');
     // no view to render
