@@ -2,10 +2,9 @@
 
 class Companies_Controller extends Base_Controller {
 
-  /* public $restful = true; do I really need this? Maybe not.
-  I don't want to have 'index' or 'show' in the URL. */
+  public $restful = true;
 
-  public function action_index() {
+  public function get_index() {
 
     $view = View::make('company.index');
   //$view['companies'] = DB::table('companies')->get();
@@ -13,7 +12,7 @@ class Companies_Controller extends Base_Controller {
     return $view;
   }
 
-  public function action_show($id) {
+  public function get_show($id) {
 
     $view = View::make('company.show');
     $view['company'] = Company::find($id);
@@ -23,7 +22,7 @@ class Companies_Controller extends Base_Controller {
     return $view;
   }
 
-  public function action_new() {
+  public function get_new() {
 
     $view = View::make('company.new');
     $view['company'] = new Company;
@@ -33,7 +32,7 @@ class Companies_Controller extends Base_Controller {
     return $view;
   }
 
-  public function action_edit($id) {
+  public function get_edit($id) {
 
     $view = View::make('company.edit');
     $view['company'] = Company::find($id);
@@ -47,7 +46,7 @@ class Companies_Controller extends Base_Controller {
     return $view;
   }
 
-  public function action_create() {
+  public function post_create() {
 
     $attributes = Input::all();
     $validation = Validator::make($attributes, Company::$rules);
@@ -67,7 +66,7 @@ class Companies_Controller extends Base_Controller {
     // no view to render
   }
 
-  public function action_update($id) {
+  public function put_update($id) {
 
     $company = Company::find($id);
 
@@ -98,7 +97,7 @@ class Companies_Controller extends Base_Controller {
     // no view to render
   }
 
-  public function action_destroy($id) {
+  public function get_destroy($id) {
 
     $company = Company::find($id)->delete();
     return Redirect::to_action('companies@index');
