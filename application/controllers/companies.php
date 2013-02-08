@@ -4,6 +4,7 @@ class Companies_Controller extends Base_Controller {
 
   public $restful = true;
 
+  # GET /companies
   public function get_index() {
 
     $view = View::make('company.index');
@@ -12,6 +13,7 @@ class Companies_Controller extends Base_Controller {
     return $view;
   }
 
+  # GET /companies/1
   public function get_show($id) {
 
     $view = View::make('company.show');
@@ -22,16 +24,18 @@ class Companies_Controller extends Base_Controller {
     return $view;
   }
 
+  # GET /companies/new
   public function get_new() {
 
     $view = View::make('company.new');
     $view['company'] = new Company;
-    $view['action'] = 'companies';
+    $view['action'] = URL::to_action('companies@create');
     $view['method'] = 'POST';
     $view['submit'] = 'Create Company';
     return $view;
   }
 
+  # GET /companies/1/edit
   public function get_edit($id) {
 
     $view = View::make('company.edit');
@@ -39,13 +43,14 @@ class Companies_Controller extends Base_Controller {
     if ($view['company'] == null) {
       return Response::error('404');
     }
-    $view['action'] = 'companies/' . $id;
+    $view['action'] = URL::to_action('companies@update', array($id));
     $view['method'] = 'PUT';
     $view['submit'] = 'Update Company';
     $view['id'] = $id;
     return $view;
   }
 
+  # POST /companies
   public function post_create() {
 
     $attributes = Input::all();
@@ -66,6 +71,7 @@ class Companies_Controller extends Base_Controller {
     // no view to render
   }
 
+  # PUT /companies/1
   public function put_update($id) {
 
     $company = Company::find($id);
@@ -91,12 +97,13 @@ class Companies_Controller extends Base_Controller {
         }
       }
     } else {
-      // company not found
+      // Company not found
       return Response::error('404');
     }
     // no view to render
   }
 
+  # GET /companies/1/delete
   public function get_destroy($id) {
 
     $company = Company::find($id)->delete();
