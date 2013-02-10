@@ -5,19 +5,21 @@
 # be placed in your Apache config whenever possible.
 # http://httpd.apache.org/docs/2.2/howto/htaccess.html
 
-# Turning on the rewrite engine is necessary for the following rules and
-# features. "+FollowSymLinks" must be enabled for this to work symbolically.
-
 <IfModule mod_rewrite.c>
+
+# "+FollowSymLinks" must be enabled for this to work symbolically.
+# However some hosting companies may already have enabled it, so you should
+# deactivate it in order to avoid 500 Internal Server Error.
+
 #	Options +FollowSymLinks
+
 	RewriteEngine On
-</IfModule>
 
 # For all files not found in the file system, reroute the request to the
 # "index.php" front controller, keeping the query string intact
 
-<IfModule mod_rewrite.c>
-	RewriteCond %{REQUEST_FILENAME} !-f
-	RewriteCond %{REQUEST_FILENAME} !-d
-	RewriteRule ^(.*)$ index.php/$1 [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . index.php [L]
+
 </IfModule>
