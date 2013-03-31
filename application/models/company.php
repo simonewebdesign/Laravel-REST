@@ -18,7 +18,7 @@ class Company extends Eloquent
 //  'telephone' => 'numeric',
 // I deactivated it because it's too restrictive: it doesn't allow spaces.
     'email'     => 'email|unique:companies,email',
-    'website'   => 'active_url'
+    'website'   => 'url'
   );
 
 }
