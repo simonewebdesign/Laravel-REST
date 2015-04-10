@@ -2,9 +2,6 @@
 
 A demo implementation of the Ruby on Rails RESTful architecture, built in Laravel. This demo app is complete of documentation ~~and a PHPUnit test suite~~ (not yet).
 
-I'll remake this when Laravel 4 stable will be released.
-
-
 ## Installation
 
 4 easy steps:
